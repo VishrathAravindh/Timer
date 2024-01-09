@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+
+<body><center>
+<div class="contain">
+  
+  <div id="hour">00</div>
+  <div id="collon">:</div>
+  <div id="min">00</div>
+  <div id="collon1">:</div>
+  <div id="sec">00</div>
+  <div id="ampm">AM</div>
+</div>
+<style>
+body{
+  background:black
+}
+body:hover{
+  background:radial-gradient(cyan,pink)
+}
+  .contain{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border:5px solid black;
+    height:100px;
+    width:400px;
+   margin-right:15px;
+    font-size:50px;
+    color:white;
+    background:black;
+    
+  }
+  .contain:hover{
+    background:pink;color:cyan;
+  }
+ 
+</style></center>
+<script>
+
+   function dis(){
+    var displayTime=new Date();
+    var hour =displayTime.getHours();
+    var min=displayTime.getMinutes();
+    var sec=displayTime.getSeconds();
+    
+      if(hour>12 ){
+      hour=hour-12
+       document.getElementById("ampm").innerHTML ='PM';
+      }
+      
+
+    var hour=document.getElementById("hour").innerHTML = hour
+    var min=document.getElementById("min").innerHTML = min
+    var sec =document.getElementById("sec").innerHTML = sec
+    
+  }
+  setInterval(dis,1000)
+</script>
+</body>
+
+</html>
